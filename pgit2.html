@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>wesbos-array-2</title>
+</head>
+<body>
+  <h2>Wesbos Array-2:</h2> 
+  <div class="person">
+    <p>Wesbos</p>
+    <p>John Doe</p>
+    <p>David Smith</p>
+  </div>
+  <script>
+    const people = document.querySelectorAll('.person p');
+    console.log(people);
+
+    const peopleArray = Array.from(people);
+    console.log(peopleArray);
+
+    const names = peopleArray.map(person => person.textContent);
+    console.log(names);
+
+    const people1 = Array.from(document.querySelectorAll('.person p'));
+    const name = people1.map(person => person.textContent);
+    console.log(name);
+    console.log('...........');
+
+    const peopleArray1 = Array.from(people, person => {
+        console.log(person);
+        return person.textContent; 
+    })
+    console.log(peopleArray1);
+
+    function sumAll() {
+        console.log(arguments);
+        const nums = Array.from(arguments);
+        console.log(nums);
+        console.log(nums.reduce((prev, next) => prev + next));
+    }
+    sumAll(25, 50, 40, 30, 12, 23);
+
+    const ages = Array.of(12, 40, 25, 38, 50);
+    console.log(ages);
+
+  </script>
+</body>
+</html> 
